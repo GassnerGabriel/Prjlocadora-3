@@ -32,12 +32,12 @@ namespace prjLocadora
             this.txtCodProd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtProd = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTelProd = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtEmailProd = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtTelProd = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtProd = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnPrimeiro = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnProximo = new System.Windows.Forms.Button();
@@ -83,21 +83,21 @@ namespace prjLocadora
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados da Produtora";
             // 
-            // txtProd
+            // txtEmailProd
             // 
-            this.txtProd.Location = new System.Drawing.Point(270, 19);
-            this.txtProd.Name = "txtProd";
-            this.txtProd.Size = new System.Drawing.Size(271, 20);
-            this.txtProd.TabIndex = 2;
+            this.txtEmailProd.Location = new System.Drawing.Point(270, 48);
+            this.txtEmailProd.Name = "txtEmailProd";
+            this.txtEmailProd.Size = new System.Drawing.Size(271, 20);
+            this.txtEmailProd.TabIndex = 6;
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(211, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Produtora";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(215, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "E-mail";
             // 
             // txtTelProd
             // 
@@ -115,21 +115,21 @@ namespace prjLocadora
             this.label3.TabIndex = 5;
             this.label3.Text = "Telefone";
             // 
-            // txtEmailProd
+            // txtProd
             // 
-            this.txtEmailProd.Location = new System.Drawing.Point(270, 48);
-            this.txtEmailProd.Name = "txtEmailProd";
-            this.txtEmailProd.Size = new System.Drawing.Size(271, 20);
-            this.txtEmailProd.TabIndex = 6;
+            this.txtProd.Location = new System.Drawing.Point(270, 19);
+            this.txtProd.Name = "txtProd";
+            this.txtProd.Size = new System.Drawing.Size(271, 20);
+            this.txtProd.TabIndex = 2;
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(215, 51);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "E-mail";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(211, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Produtora";
             // 
             // btnPrimeiro
             // 
@@ -219,6 +219,7 @@ namespace prjLocadora
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmProdutoras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produtoras";

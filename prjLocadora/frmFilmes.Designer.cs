@@ -30,18 +30,18 @@ namespace prjLocadora
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbbGenero = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbbProdutora = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtCodFilme = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtTituloFilme = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAnoFilme = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbbProdutora = new System.Windows.Forms.ComboBox();
-            this.cbbGenero = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnPrimeiro = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnSeguinte = new System.Windows.Forms.Button();
@@ -51,8 +51,8 @@ namespace prjLocadora
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -73,6 +73,72 @@ namespace prjLocadora
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Filme";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.SteelBlue;
+            this.groupBox3.Controls.Add(this.cbbGenero);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Location = new System.Drawing.Point(280, 84);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(208, 75);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Generos";
+            // 
+            // cbbGenero
+            // 
+            this.cbbGenero.FormattingEnabled = true;
+            this.cbbGenero.Location = new System.Drawing.Point(59, 19);
+            this.cbbGenero.Name = "cbbGenero";
+            this.cbbGenero.Size = new System.Drawing.Size(121, 21);
+            this.cbbGenero.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(11, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Genero";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.SkyBlue;
+            this.groupBox2.Controls.Add(this.cbbProdutora);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Location = new System.Drawing.Point(15, 84);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(211, 75);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Produtoras";
+            // 
+            // cbbProdutora
+            // 
+            this.cbbProdutora.FormattingEnabled = true;
+            this.cbbProdutora.Location = new System.Drawing.Point(67, 19);
+            this.cbbProdutora.Name = "cbbProdutora";
+            this.cbbProdutora.Size = new System.Drawing.Size(121, 21);
+            this.cbbProdutora.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Produtora";
+            // 
+            // txtCodFilme
+            // 
+            this.txtCodFilme.Location = new System.Drawing.Point(85, 19);
+            this.txtCodFilme.Name = "txtCodFilme";
+            this.txtCodFilme.Size = new System.Drawing.Size(100, 20);
+            this.txtCodFilme.TabIndex = 2;
+            this.txtCodFilme.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -82,14 +148,6 @@ namespace prjLocadora
             this.label1.TabIndex = 1;
             this.label1.Text = "Código Filme";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // txtCodFilme
-            // 
-            this.txtCodFilme.Location = new System.Drawing.Point(85, 19);
-            this.txtCodFilme.Name = "txtCodFilme";
-            this.txtCodFilme.Size = new System.Drawing.Size(100, 20);
-            this.txtCodFilme.TabIndex = 2;
-            this.txtCodFilme.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtTituloFilme
             // 
@@ -124,64 +182,6 @@ namespace prjLocadora
             this.label3.Size = new System.Drawing.Size(88, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Ano Lançamento";
-            // 
-            // cbbProdutora
-            // 
-            this.cbbProdutora.FormattingEnabled = true;
-            this.cbbProdutora.Location = new System.Drawing.Point(67, 19);
-            this.cbbProdutora.Name = "cbbProdutora";
-            this.cbbProdutora.Size = new System.Drawing.Size(121, 21);
-            this.cbbProdutora.TabIndex = 7;
-            // 
-            // cbbGenero
-            // 
-            this.cbbGenero.FormattingEnabled = true;
-            this.cbbGenero.Location = new System.Drawing.Point(59, 19);
-            this.cbbGenero.Name = "cbbGenero";
-            this.cbbGenero.Size = new System.Drawing.Size(121, 21);
-            this.cbbGenero.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Produtora";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Genero";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.SkyBlue;
-            this.groupBox2.Controls.Add(this.cbbProdutora);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(15, 84);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(211, 75);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Produtoras";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.SteelBlue;
-            this.groupBox3.Controls.Add(this.cbbGenero);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(280, 84);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(208, 75);
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Generos";
             // 
             // btnPrimeiro
             // 
@@ -271,15 +271,16 @@ namespace prjLocadora
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmFilmes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filmes";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
