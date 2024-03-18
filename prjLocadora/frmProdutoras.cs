@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace prjLocadora
 {
     public partial class frmProdutoras : Form
     {
-        String connectionString = @"Server=; Database=; User Id=;Password=;";
+        String connectionString = @"Server=;Database=;User Id=;Password=";
         bool novo;
         public frmProdutoras()
         {
@@ -28,7 +22,32 @@ namespace prjLocadora
             txtProd.Enabled = false;
             txtTelProd.Enabled = false;
 
+            string sql = "SELECT * FROM tbl_Produtora";
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader reader;
+            con.Open();
 
+            try
+            {
+                reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    txtCodProd.Text = reader[0].ToString();
+                    txtProd.Text = reader[1].ToString();
+                    txtEmailProd.Text = reader[2].ToString();
+                    txtTelProd.Text = reader[3].ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -54,7 +73,7 @@ namespace prjLocadora
             if (novo)
             {
                 string sql = "INSERT INTO tbl_Produtora(nomeProd, telProd, emailProd) "
-                    + "VALUES ('"+txtProd.Text+"', '"+txtTelProd.Text + "', '"
+                    + "VALUES ('" + txtProd.Text + "', '" + txtTelProd.Text + "', '"
                     + txtEmailProd.Text + "')";
                 //MessageBox.Show(sql);
                 SqlConnection con = new SqlConnection(connectionString);
@@ -66,11 +85,10 @@ namespace prjLocadora
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)
                     {
-                        MessageBox.Show("É tetra, é tetra!!");
-                        
+                        MessageBox.Show("Produtora cadastrada com sucesso!");
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Erro: " + ex.ToString());
                 }
@@ -79,6 +97,79 @@ namespace prjLocadora
                     con.Close();
                 }
             }
+            else
+            {
+                string sql = "UPDATE tbl_Produtora SET nomeProd='" + txtProd.Text +
+                    "', emailProd='" + txtEmailProd.Text + "', telProd='" + txtTelProd.Text +
+                    "' WHERE codProd=" + txtCodProd.Text;
+                SqlConnection con = new SqlConnection(connectionString);
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.CommandType = CommandType.Text;
+                con.Open();
+                try
+                {
+                    int i = cmd.ExecuteNonQuery();
+                    if (i > 0)
+                    {
+                        MessageBox.Show("Produtora alterada com sucesso!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.ToString());
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+
+            btnSalvar.Enabled = false;
+            txtCodProd.Enabled = false;
+            txtEmailProd.Enabled = false;
+            txtProd.Enabled = false;
+            txtTelProd.Enabled = false;
+            btnNovo.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            string sql = "DELETE FROM tbl_Produtora WHERE codProd=" + txtCodProd.Text;
+
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            con.Open();
+            try
+            {
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    MessageBox.Show("Produtora excluida com sucesso!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            novo = false;
+            btnNovo.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnSalvar.Enabled = true;
+            txtProd.Enabled = true;
+            txtEmailProd.Enabled = true;
+            txtTelProd.Enabled = true;
         }
     }
 }
